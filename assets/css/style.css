@@ -1,0 +1,122 @@
+* {
+  font-family: 'Marck Script', cursive;
+}
+
+.back {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+}
+
+.container {
+  max-width: 700px;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.settings {
+    font-size: 25px;
+}
+
+.clock {
+    height: 90px;
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.clock.animate__animated {
+    color: red;
+    animation-duration: 1s;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.card-wrapper {
+  position: relative;
+  flex-basis: 25%;
+  height: 160px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.opened .card-front {
+  transform: rotateY(180deg)
+}
+
+.opened .card-back {
+  transform: rotateY(360deg)
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 10%;
+  box-shadow: -3px 1px 20px 0px rgba(83, 83, 83, 0.31);
+  transition: transform 1s ease;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-image: url('../img/card-back.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.card-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  font-size: 75px;
+  transform: rotateY(180deg);
+}
+
+.restart-btn-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.toast-title, .toast-body {
+  font-family: 'Poiret One', cursive;
+}
+
+@media (max-width: 600px)
+{
+	.card-wrapper {
+		height: 120px;
+	}
+
+  .clock {
+    margin-bottom: 0;
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 400px)
+{
+	.card-wrapper {
+		height: 80px;
+	}
+
+  .clock {
+    font-size: 30px;
+  }
+}
