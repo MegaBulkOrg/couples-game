@@ -43,6 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .card-wrapper {
@@ -119,4 +120,17 @@
   .clock {
     font-size: 30px;
   }
+}
+
+.container--new {
+  width: 1600px ;
+  margin: 0 auto;
+}
+
+.card-wrapper--new {
+  position: relative;
+  height: 160px;
+  width: 160px;
+  cursor: pointer;
+  perspective: 1000px;
 }

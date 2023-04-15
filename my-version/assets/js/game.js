@@ -4,7 +4,10 @@
               form = document.querySelector('.settings'),
               clock = document.querySelector('.clock'),
               board = document.querySelector('.board'),
-              playAgain = document.querySelector('.play-again');
+              playAgain = document.querySelector('.play-again'),
+              container = document.querySelector('.container');
+
+
         let cardsQuantity = 0,
             couplesQuantity = 0,
             timerOn = false,
@@ -57,6 +60,14 @@
                 numsArrayCount++;
                 board.append(cardWrapper);
                 cardWrapper.addEventListener('click', cardOpen);
+
+
+                if(cardsQuantity > 20) {
+                    cardWrapper.classList.remove('card-wrapper');
+                    cardWrapper.classList.add('card-wrapper--new');
+                }
+                
+                
             }
             numsArrayCount = 0;
         }
@@ -128,16 +139,29 @@
               compareMode = false;
           }
         }
+
+        
+
         form.addEventListener('submit', form => {
             form.preventDefault();
             cardsQuantity = document.querySelector('input[name="cards-quantity"]').value;
             timerOn = document.querySelector('input[name="timer"]').checked;
-            if ((cardsQuantity >= 2 && cardsQuantity <= 50) && cardsQuantity%2 === 0) {
-              gameCreate();
+
+                if ((cardsQuantity >= 4 && cardsQuantity > 20) && cardsQuantity%2 === 0) {
+                    container.classList.remove('container');
+                    container.classList.add('container--new');
+                    gameCreate();
+                    
+                    console.log('hi');
+                }
+
+            if ((cardsQuantity >= 4 && cardsQuantity < 50) && cardsQuantity%2 === 0) {
+                gameCreate();
             } else {
               const toast = new bootstrap.Toast(toastEl);
               toast.show();
             }
         });
+
     })
 })();
