@@ -12,4 +12,4 @@
 
 - Установить GIT
 - В командной строке склонировать репозиторий командой: `git clone https://github.com/MegaBulkOrg/couples-game.git`
-- Перейти в папку склонированного проекта и открыть в браузере файл `my-version/index.html` либо файл `original-version/index.html`
+- Перейти в папку склонированного проекта и открыть в браузере либо файл `my-version/index.html` либо файл `original-version/index.html`
